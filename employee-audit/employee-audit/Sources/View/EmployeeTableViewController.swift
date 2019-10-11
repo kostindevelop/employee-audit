@@ -8,11 +8,6 @@
 
 import UIKit
 
-struct Employee {
-    var name: String
-    var index: String
-}
-
 class EmployeeTableViewController: UITableViewController {
     
     var tableViewModel: TableViewModel?
@@ -51,11 +46,10 @@ class EmployeeTableViewController: UITableViewController {
 
         guard let employeeCell = cell else { return UITableViewCell() }
         
-        let item = tableViewModel?.employee[indexPath.row]
+        let tableCellViewModel = tableViewModel?.cellViewModel(forIndexPath: indexPath)
         
-        employeeCell.employeeName.text = "\(item?.name ?? "")"
-        employeeCell.employeeIndex.text = "\(indexPath.row)"
-
+        employeeCell.viewModel = tableCellViewModel as? TableViewCellViewModel
+        
         return cell!
     }
     
@@ -72,7 +66,7 @@ class EmployeeTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-        guard let rowToMove = tableViewModel?.employee[fromIndexPath.row] else { return }
+        guard let rowToMove = tableViewModel?.employees[fromIndexPath.row] else { return }
         tableViewModel?.employeeRemove(at: fromIndexPath)
         tableViewModel?.employeeInsert(rowToMove, to: to)
     }

@@ -10,21 +10,26 @@ import Foundation
 
 class TableViewModel: TableViewModelType {
     
-    var employee = [
+    var employees = [
     Employee(name: "Lena", index: ""),
     Employee(name: "Jony", index: ""),
     Employee(name: "Konstantin", index: "")]
     
     var numberOfRows: Int {
-        return employee.count
+        return employees.count
     }
     
     func employeeRemove(at indexPath: IndexPath) {
-        employee.remove(at: indexPath.row)
+        employees.remove(at: indexPath.row)
     }
     
     func employeeInsert(_ employe: Employee, to: IndexPath) {
-        employee.insert(employe, at: to.row)
+        employees.insert(employe, at: to.row)
+    }
+    
+    func cellViewModel(forIndexPath indexPath: IndexPath) -> TableViewCellViewModelType {
+        let employee = employees[indexPath.row]
+        return TableViewCellViewModel(employee: employee)
     }
     
 }

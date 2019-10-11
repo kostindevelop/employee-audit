@@ -18,6 +18,9 @@
 		B5AED3AB2351043C00CBF29B /* AddEmployeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AED3AA2351043C00CBF29B /* AddEmployeeViewController.swift */; };
 		B5AED3AD2351078700CBF29B /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AED3AC2351078700CBF29B /* TableViewModel.swift */; };
 		B5AED3AF235107B200CBF29B /* TableViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AED3AE235107B200CBF29B /* TableViewModelType.swift */; };
+		B5EE6DB1235116DE00415EE1 /* TableViewCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EE6DB0235116DE00415EE1 /* TableViewCellViewModelType.swift */; };
+		B5EE6DB32351187200415EE1 /* TableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EE6DB22351187200415EE1 /* TableViewCellViewModel.swift */; };
+		B5EE6DB523511BDD00415EE1 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EE6DB423511BDD00415EE1 /* Employee.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		B5AED3AA2351043C00CBF29B /* AddEmployeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeViewController.swift; sourceTree = "<group>"; };
 		B5AED3AC2351078700CBF29B /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
 		B5AED3AE235107B200CBF29B /* TableViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModelType.swift; sourceTree = "<group>"; };
+		B5EE6DB0235116DE00415EE1 /* TableViewCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellViewModelType.swift; sourceTree = "<group>"; };
+		B5EE6DB22351187200415EE1 /* TableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellViewModel.swift; sourceTree = "<group>"; };
+		B5EE6DB423511BDD00415EE1 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,7 @@
 		B5AED39E2350C7A000CBF29B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B5EE6DB423511BDD00415EE1 /* Employee.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -126,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				B5AED3AC2351078700CBF29B /* TableViewModel.swift */,
+				B5EE6DB22351187200415EE1 /* TableViewCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -142,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				B5AED3AE235107B200CBF29B /* TableViewModelType.swift */,
+				B5EE6DB0235116DE00415EE1 /* TableViewCellViewModelType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -217,13 +226,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5EE6DB32351187200415EE1 /* TableViewCellViewModel.swift in Sources */,
 				B5AED3AB2351043C00CBF29B /* AddEmployeeViewController.swift in Sources */,
 				B5AED3AF235107B200CBF29B /* TableViewModelType.swift in Sources */,
+				B5EE6DB523511BDD00415EE1 /* Employee.swift in Sources */,
 				B5AED3AD2351078700CBF29B /* TableViewModel.swift in Sources */,
 				B5AED3892350C71000CBF29B /* ViewController.swift in Sources */,
 				B5AED3A62350F58100CBF29B /* EmployeeTableViewController.swift in Sources */,
 				B5AED38F2350C71000CBF29B /* employee_audit.xcdatamodeld in Sources */,
 				B5AED3A92350F8AA00CBF29B /* EmployeeTableViewCell.swift in Sources */,
+				B5EE6DB1235116DE00415EE1 /* TableViewCellViewModelType.swift in Sources */,
 				B5AED3852350C71000CBF29B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,7 +393,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.app.employee-audit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -402,7 +414,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.app.employee-audit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

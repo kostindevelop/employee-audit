@@ -10,7 +10,7 @@ import Foundation
 
 protocol TableViewModelType {
     var numberOfRows: Int { get }
-    var employee: [Employee] { get }
+    func cellViewModel(forIndexPath indexPath: IndexPath) -> TableViewCellViewModelType
     func employeeRemove(at: IndexPath)
     func employeeInsert(_ employee: Employee, to: IndexPath)
 }
