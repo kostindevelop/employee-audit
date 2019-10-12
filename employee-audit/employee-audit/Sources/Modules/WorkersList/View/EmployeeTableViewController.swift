@@ -10,11 +10,10 @@ import UIKit
 
 class EmployeeTableViewController: UITableViewController {
     
-    var tableViewModel: TableViewModel?
-
+    var tableViewModel: TableViewModelType?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableViewModel = TableViewModel()
         self.title = "Employees"
         if #available(iOS 11, *) {
@@ -22,13 +21,23 @@ class EmployeeTableViewController: UITableViewController {
             self.navigationController?.navigationItem.largeTitleDisplayMode = .always
         }
         self.navigationItem.leftBarButtonItem = self.editButtonItem
+        tableViewModel?.loadData()
     }
 
-    @available(iOS 13.0, *)
     @IBAction func didTapAddEmployee(_ sender: UIBarButtonItem) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let addEmployeeVC = storyboard.instantiateViewController(identifier: "AddEmployeeScreen")
-        present(addEmployeeVC, animated: true, completion: nil)
+        if #available(iOS 13.0, *) {
+            guard let addEmployeeScreen = storyboard?.instantiateViewController(
+                identifier: "AddEmployeeScreen",
+                creator: { coder in
+                    AddEmployeeViewController(coder: coder)
+            }) else {
+                fatalError("Unable to create PreviewController")
+            }
+            present(addEmployeeScreen, animated: true)
+        } else {
+            // Fallback on earlier versions
+        }
+        
     }
     
     // MARK: - Table view data source
@@ -46,9 +55,9 @@ class EmployeeTableViewController: UITableViewController {
 
         guard let employeeCell = cell else { return UITableViewCell() }
         
-        let tableCellViewModel = tableViewModel?.cellViewModel(forIndexPath: indexPath)
+        let tableCellViewModel = tableViewModel?.cellViewModel(forIndexPath: indexPath) as? TableViewCellViewModel
         
-        employeeCell.viewModel = tableCellViewModel as? TableViewCellViewModel
+        employeeCell.viewModel = tableCellViewModel
         
         return cell!
     }

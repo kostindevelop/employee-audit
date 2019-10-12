@@ -10,7 +10,7 @@ import Foundation
 
 class TableViewCellViewModel: TableViewCellViewModelType {
     
-    private let employee: Employee
+    private let employee: EmployeeModel
     
     var name: String {
         return employee.name
@@ -21,7 +21,7 @@ class TableViewCellViewModel: TableViewCellViewModelType {
     }
     
     
-    init(employee: Employee) {
+    init(employee: EmployeeModel) {
         self.employee = employee
     }
     

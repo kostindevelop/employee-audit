@@ -9,21 +9,31 @@
 import Foundation
 
 class TableViewModel: TableViewModelType {
+
+    var workers: [BaseModel] = []
     
     var employees = [
-    Employee(name: "Lena", index: ""),
-    Employee(name: "Jony", index: ""),
-    Employee(name: "Konstantin", index: "")]
+    EmployeeModel(name: "Lena", index: ""),
+    EmployeeModel(name: "Johni", index: ""),
+    EmployeeModel(name: "Konstantin", index: "")]
     
     var numberOfRows: Int {
         return employees.count
     }
     
-    func employeeRemove(at indexPath: IndexPath) {
-        employees.remove(at: indexPath.row)
+    func loadData() {
+        StorageService.shared.saveWorke(Managment.self)
+        workers = StorageService.shared.getAllWorkers()
+        print(workers.count)
     }
     
-    func employeeInsert(_ employe: Employee, to: IndexPath) {
+    func employeeRemove(at indexPath: IndexPath) {
+        workers.remove(at: indexPath.row)
+        let worker = workers[indexPath.row]
+        StorageService.shared.delete(object: worker)
+    }
+    
+    func employeeInsert(_ employe: EmployeeModel, to: IndexPath) {
         employees.insert(employe, at: to.row)
     }
     

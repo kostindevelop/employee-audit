@@ -1,5 +1,5 @@
 //
-//  Employee.swift
+//  EmployeeModel.swift
 //  employee-audit
 //
 //  Created by Konstantin Igorevich on 11.10.2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Employee {
+struct EmployeeModel {
     var name: String
     var index: String
 }
