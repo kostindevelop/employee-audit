@@ -17,7 +17,7 @@ class EmployeeTableViewCell: UITableViewCell {
         willSet(viewModel) {
             guard let viewModel = viewModel else { return }
             employeeName.text = viewModel.name
-            employeeIndex.text = viewModel.index
+            employeeIndex.text = viewModel.salary
         }
     }
 }

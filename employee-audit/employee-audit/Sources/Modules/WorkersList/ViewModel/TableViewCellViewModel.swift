@@ -10,18 +10,18 @@ import Foundation
 
 class TableViewCellViewModel: TableViewCellViewModelType {
     
-    private let employee: EmployeeModel
+    private let employee: BaseModel
     
     var name: String {
-        return employee.name
+        return employee.name ?? ""
     }
     
-    var index: String {
-        return employee.index
+    var salary: String {
+        return "\(employee.salary)"
     }
     
     
-    init(employee: EmployeeModel) {
+    init(employee: BaseModel) {
         self.employee = employee
     }
     

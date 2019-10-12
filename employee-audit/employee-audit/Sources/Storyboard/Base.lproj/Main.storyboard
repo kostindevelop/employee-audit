@@ -50,7 +50,7 @@
         <!--Galery-->
         <scene sceneID="rNo-o0-B89">
             <objects>
-                <collectionViewController id="oEA-QG-RHg" sceneMemberID="viewController">
+                <collectionViewController id="oEA-QG-RHg" customClass="PhotoGaleryCollectionViewController" customModule="employee_audit" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="cCz-KA-loe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -168,42 +168,41 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0LY-Zm-kbC">
-                                        <rect key="frame" x="24" y="65" width="366" height="21"/>
+                                        <rect key="frame" x="24" y="129" width="366" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="systemGrayColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3c3-7g-AMn">
-                                        <rect key="frame" x="24" y="101" width="366" height="34"/>
+                                        <rect key="frame" x="24" y="165" width="366" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haz-4M-dCl">
-                                        <rect key="frame" x="24" y="150" width="366" height="21"/>
+                                        <rect key="frame" x="24" y="214" width="366" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" systemColor="systemGrayColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m7w-1V-921">
-                                        <rect key="frame" x="24" y="186" width="366" height="34"/>
+                                        <rect key="frame" x="24" y="250" width="366" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsX-oJ-hgf">
-                                        <rect key="frame" x="24" y="10" width="60" height="40"/>
+                                        <rect key="frame" x="24" y="10" width="48" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="GzV-nR-8XE"/>
-                                            <constraint firstAttribute="width" constant="60" id="q0N-gf-Rbn"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                         <state key="normal" title="Cancel"/>
                                         <connections>
                                             <action selector="didTabCancelBarButtonItem:" destination="6XC-Ve-R5F" eventType="touchUpInside" id="pA0-ws-LSm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqs-Dr-dJH">
-                                        <rect key="frame" x="330" y="10" width="60" height="40"/>
+                                        <rect key="frame" x="356" y="10" width="34" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="K1Q-f4-SSV"/>
                                             <constraint firstAttribute="height" constant="40" id="Wtk-vP-d79"/>
                                         </constraints>
                                         <state key="normal" title="Save"/>
@@ -211,6 +210,20 @@
                                             <action selector="didTabSaveBurButtonItem:" destination="6XC-Ve-R5F" eventType="touchUpInside" id="kx9-Np-g1Y"/>
                                         </connections>
                                     </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="syN-Ex-fjP">
+                                        <rect key="frame" x="24" y="74" width="366" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="31" id="SBz-89-RlP"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Employee"/>
+                                            <segment title="Managment"/>
+                                            <segment title="Accountant"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="didTabSegmentControll:" destination="6XC-Ve-R5F" eventType="valueChanged" id="P75-UZ-YWU"/>
+                                        </connections>
+                                    </segmentedControl>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="bVm-sr-Jah" firstAttribute="trailing" secondItem="nqs-Dr-dJH" secondAttribute="trailing" constant="24" id="1rB-ZI-Ih5"/>
@@ -218,14 +231,18 @@
                                     <constraint firstItem="0LY-Zm-kbC" firstAttribute="leading" secondItem="bVm-sr-Jah" secondAttribute="leading" constant="24" id="3qx-a5-goo"/>
                                     <constraint firstItem="haz-4M-dCl" firstAttribute="top" secondItem="3c3-7g-AMn" secondAttribute="bottom" constant="15" id="C57-Hf-ZdU"/>
                                     <constraint firstItem="bVm-sr-Jah" firstAttribute="trailing" secondItem="0LY-Zm-kbC" secondAttribute="trailing" constant="24" id="D1F-G8-dfq"/>
+                                    <constraint firstItem="bVm-sr-Jah" firstAttribute="trailing" secondItem="syN-Ex-fjP" secondAttribute="trailing" constant="24" id="IHw-PA-Tbi"/>
                                     <constraint firstItem="haz-4M-dCl" firstAttribute="trailing" secondItem="0LY-Zm-kbC" secondAttribute="trailing" id="LbL-94-xMG"/>
                                     <constraint firstItem="gsX-oJ-hgf" firstAttribute="leading" secondItem="bVm-sr-Jah" secondAttribute="leading" constant="24" id="MQE-hm-cjd"/>
                                     <constraint firstItem="haz-4M-dCl" firstAttribute="leading" secondItem="0LY-Zm-kbC" secondAttribute="leading" id="MaF-zO-z9N"/>
                                     <constraint firstItem="3c3-7g-AMn" firstAttribute="leading" secondItem="0LY-Zm-kbC" secondAttribute="leading" id="Nol-Jc-4QQ"/>
                                     <constraint firstItem="m7w-1V-921" firstAttribute="top" secondItem="haz-4M-dCl" secondAttribute="bottom" constant="15" id="WUh-dV-VOg"/>
                                     <constraint firstItem="3c3-7g-AMn" firstAttribute="top" secondItem="0LY-Zm-kbC" secondAttribute="bottom" constant="15" id="YLB-vr-dij"/>
+                                    <constraint firstItem="syN-Ex-fjP" firstAttribute="leading" secondItem="bVm-sr-Jah" secondAttribute="leading" constant="24" id="bOL-a6-lcE"/>
                                     <constraint firstItem="3c3-7g-AMn" firstAttribute="trailing" secondItem="0LY-Zm-kbC" secondAttribute="trailing" id="gqa-7I-oLW"/>
-                                    <constraint firstItem="0LY-Zm-kbC" firstAttribute="top" secondItem="gsX-oJ-hgf" secondAttribute="bottom" constant="15" id="q6e-Kr-VMA"/>
+                                    <constraint firstItem="syN-Ex-fjP" firstAttribute="top" secondItem="nqs-Dr-dJH" secondAttribute="bottom" constant="24" id="iPw-ba-u3k"/>
+                                    <constraint firstItem="nqs-Dr-dJH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gsX-oJ-hgf" secondAttribute="trailing" constant="8" symbolic="YES" id="kKW-LU-XBJ"/>
+                                    <constraint firstItem="0LY-Zm-kbC" firstAttribute="top" secondItem="syN-Ex-fjP" secondAttribute="bottom" constant="24" id="mBp-Di-QxE"/>
                                     <constraint firstItem="m7w-1V-921" firstAttribute="leading" secondItem="0LY-Zm-kbC" secondAttribute="leading" id="r49-Yr-gXb"/>
                                     <constraint firstItem="nqs-Dr-dJH" firstAttribute="top" secondItem="bVm-sr-Jah" secondAttribute="top" constant="10" id="tWe-6k-WoK"/>
                                     <constraint firstItem="gsX-oJ-hgf" firstAttribute="top" secondItem="bVm-sr-Jah" secondAttribute="top" constant="10" id="xoo-aY-L5t"/>
@@ -236,10 +253,13 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="zws-9I-PHA" firstAttribute="trailing" secondItem="pPD-se-lph" secondAttribute="trailing" id="5sq-ZV-SG2"/>
-                            <constraint firstItem="zws-9I-PHA" firstAttribute="leading" secondItem="pPD-se-lph" secondAttribute="leading" id="Acq-Th-QEU"/>
-                            <constraint firstItem="zws-9I-PHA" firstAttribute="bottom" secondItem="pPD-se-lph" secondAttribute="bottom" id="ZV6-t9-ZSE"/>
-                            <constraint firstItem="zws-9I-PHA" firstAttribute="top" secondItem="pPD-se-lph" secondAttribute="top" id="nkl-vs-bsk"/>
+                            <constraint firstItem="zws-9I-PHA" firstAttribute="trailing" secondItem="pPD-se-lph" secondAttribute="trailing" id="4RC-Zc-lqs"/>
+                            <constraint firstItem="zws-9I-PHA" firstAttribute="centerX" secondItem="pPD-se-lph" secondAttribute="centerX" id="889-qe-7vO"/>
+                            <constraint firstItem="zws-9I-PHA" firstAttribute="top" secondItem="pPD-se-lph" secondAttribute="top" id="Jt4-Df-IY7"/>
+                            <constraint firstItem="zws-9I-PHA" firstAttribute="centerX" secondItem="pPD-se-lph" secondAttribute="centerX" id="WDj-1u-qVU"/>
+                            <constraint firstItem="zws-9I-PHA" firstAttribute="leading" secondItem="pPD-se-lph" secondAttribute="leading" id="ZIe-A0-xb0"/>
+                            <constraint firstItem="zws-9I-PHA" firstAttribute="bottom" secondItem="pPD-se-lph" secondAttribute="bottom" id="h7z-dp-IdP"/>
+                            <constraint firstItem="zws-9I-PHA" firstAttribute="width" secondItem="pPD-se-lph" secondAttribute="width" id="tMo-Mx-QEh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pPD-se-lph"/>
                     </view>
@@ -247,6 +267,10 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cx3-Hh-V5G"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Qmd-Bh-0VM"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="labelNameWorker" destination="3c3-7g-AMn" id="lkH-AN-kkH"/>
+                        <outlet property="labelSalaryWorker" destination="m7w-1V-921" id="hOy-TS-1h8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6n-5W-Dyv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,6 +9,12 @@
 import Foundation
 
 class WorkerCreationViewModel: WorkerCreationViewModelType {
+    
+    var typeWorker: TypeWorker = .employee
     var typeController: TypeController = .create
     var worker: BaseModel?
+    
+    func saveNewWorker(name: String, salary: Int) {
+           StorageService.shared.saveNewWorker(with: typeWorker, name: name, salary: salary)
+       }
 }

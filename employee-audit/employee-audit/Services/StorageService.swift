@@ -56,6 +56,23 @@ class StorageService {
         }
     }
     
+    func saveNewWorker(with type: TypeWorker, name: String, salary: Int) {
+        var newObject = BaseModel()
+        switch type {
+        case .employee:
+            newObject = Employee(context: context)
+        case .accountant:
+            newObject = Accountant(context: context)
+        case .managment:
+            newObject = Managment(context: context)
+        default:
+            break
+        }
+        newObject.name = name
+        newObject.salary = Int64(salary)
+        save()
+    }
+    
     func saveWorke<T>(_ object: T.Type) where T: BaseModel {
         _ = T(context: context)
         save()

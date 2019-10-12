@@ -10,5 +10,5 @@ import Foundation
 
 protocol TableViewCellViewModelType {
     var name: String { get }
-    var index: String { get }
+    var salary: String { get }
 }

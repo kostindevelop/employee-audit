@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B53418BF235203BD00862DB1 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53418BE235203BD00862DB1 /* Common.swift */; };
 		B5AED3852350C71000CBF29B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AED3842350C71000CBF29B /* AppDelegate.swift */; };
 		B5AED38C2350C71000CBF29B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5AED38A2350C71000CBF29B /* Main.storyboard */; };
 		B5AED38F2350C71000CBF29B /* employee_audit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5AED38D2350C71000CBF29B /* employee_audit.xcdatamodeld */; };
@@ -19,6 +20,7 @@
 		B5AED3AF235107B200CBF29B /* TableViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AED3AE235107B200CBF29B /* TableViewModelType.swift */; };
 		B5D983662351395C00880AD6 /* WorkerCreationViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D983652351395C00880AD6 /* WorkerCreationViewModelType.swift */; };
 		B5D98368235139D400880AD6 /* WorkerCreationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D98367235139D400880AD6 /* WorkerCreationViewModel.swift */; };
+		B5D9836F2351CE5D00880AD6 /* PhotoGaleryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9836E2351CE5D00880AD6 /* PhotoGaleryCollectionViewController.swift */; };
 		B5EE6DB1235116DE00415EE1 /* TableViewCellViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EE6DB0235116DE00415EE1 /* TableViewCellViewModelType.swift */; };
 		B5EE6DB32351187200415EE1 /* TableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EE6DB22351187200415EE1 /* TableViewCellViewModel.swift */; };
 		B5EE6DB523511BDD00415EE1 /* EmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5EE6DB423511BDD00415EE1 /* EmployeeModel.swift */; };
@@ -26,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B53418BE235203BD00862DB1 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		B5AED3812350C71000CBF29B /* employee-audit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "employee-audit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5AED3842350C71000CBF29B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5AED38B2350C71000CBF29B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 		B5AED3AE235107B200CBF29B /* TableViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModelType.swift; sourceTree = "<group>"; };
 		B5D983652351395C00880AD6 /* WorkerCreationViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerCreationViewModelType.swift; sourceTree = "<group>"; };
 		B5D98367235139D400880AD6 /* WorkerCreationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerCreationViewModel.swift; sourceTree = "<group>"; };
+		B5D9836E2351CE5D00880AD6 /* PhotoGaleryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGaleryCollectionViewController.swift; sourceTree = "<group>"; };
 		B5EE6DB0235116DE00415EE1 /* TableViewCellViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellViewModelType.swift; sourceTree = "<group>"; };
 		B5EE6DB22351187200415EE1 /* TableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellViewModel.swift; sourceTree = "<group>"; };
 		B5EE6DB423511BDD00415EE1 /* EmployeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeModel.swift; sourceTree = "<group>"; };
@@ -57,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B53418BD235203AD00862DB1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B53418BE235203BD00862DB1 /* Common.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		B5AED3782350C71000CBF29B = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +98,7 @@
 		B5AED39B2350C72400CBF29B /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B53418BD235203AD00862DB1 /* Common */,
 				B5EE6DBA2351329100415EE1 /* Modules */,
 				B5AED39D2350C79200CBF29B /* Storyboard */,
 				B5AED3842350C71000CBF29B /* AppDelegate.swift */,
@@ -155,6 +168,46 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		B5D983692351CDE000880AD6 /* PhotoGalery */ = {
+			isa = PBXGroup;
+			children = (
+				B5D9836A2351CDF000880AD6 /* Protocols */,
+				B5D9836D2351CE1200880AD6 /* Model */,
+				B5D9836C2351CE0900880AD6 /* View */,
+				B5D9836B2351CE0000880AD6 /* ViewModel */,
+			);
+			path = PhotoGalery;
+			sourceTree = "<group>";
+		};
+		B5D9836A2351CDF000880AD6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B5D9836B2351CE0000880AD6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B5D9836C2351CE0900880AD6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B5D9836E2351CE5D00880AD6 /* PhotoGaleryCollectionViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B5D9836D2351CE1200880AD6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B5EE6DB623512CF500415EE1 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +232,7 @@
 			children = (
 				B5EE6DB92351326200415EE1 /* WorkersList */,
 				B5EE6DBB235135AC00415EE1 /* WorkerCreation */,
+				B5D983692351CDE000880AD6 /* PhotoGalery */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -309,6 +363,8 @@
 				B5AED3A92350F8AA00CBF29B /* EmployeeTableViewCell.swift in Sources */,
 				B5EE6DB1235116DE00415EE1 /* TableViewCellViewModelType.swift in Sources */,
 				B5AED3852350C71000CBF29B /* AppDelegate.swift in Sources */,
+				B53418BF235203BD00862DB1 /* Common.swift in Sources */,
+				B5D9836F2351CE5D00880AD6 /* PhotoGaleryCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

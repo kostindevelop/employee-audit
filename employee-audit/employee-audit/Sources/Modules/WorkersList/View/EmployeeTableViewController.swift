@@ -21,13 +21,24 @@ class EmployeeTableViewController: UITableViewController {
             self.navigationController?.navigationItem.largeTitleDisplayMode = .always
         }
         self.navigationItem.leftBarButtonItem = self.editButtonItem
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: NSNotification.Name(rawValue: Common.NotificationIdentifire.saveNewWorker), object: nil)
+        reloadData()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc private func reloadData() {
         tableViewModel?.loadData()
+        self.tableView.reloadData()
     }
 
     @IBAction func didTapAddEmployee(_ sender: UIBarButtonItem) {
         if #available(iOS 13.0, *) {
             guard let addEmployeeScreen = storyboard?.instantiateViewController(
-                identifier: "AddEmployeeScreen",
+                identifier: Common.ScreenIdentifire.addEmployeeScreen,
                 creator: { coder in
                     AddEmployeeViewController(coder: coder)
             }) else {
@@ -37,7 +48,6 @@ class EmployeeTableViewController: UITableViewController {
         } else {
             // Fallback on earlier versions
         }
-        
     }
     
     // MARK: - Table view data source
@@ -51,7 +61,7 @@ class EmployeeTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Employee", for: indexPath) as? EmployeeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Common.CellIdentifire.employCell, for: indexPath) as? EmployeeTableViewCell
 
         guard let employeeCell = cell else { return UITableViewCell() }
         
@@ -75,7 +85,7 @@ class EmployeeTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-        guard let rowToMove = tableViewModel?.employees[fromIndexPath.row] else { return }
+        guard let rowToMove = tableViewModel?.workers[fromIndexPath.row] else { return }
         tableViewModel?.employeeRemove(at: fromIndexPath)
         tableViewModel?.employeeInsert(rowToMove, to: to)
     }
