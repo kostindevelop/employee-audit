@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14903" systemVersion="19A582a" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Accountant" representedClassName="Accountant" parentEntity="BaseEmployeeModel" syncable="YES" codeGenerationType="class">
+        <attribute name="accountantType" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="BaseEmployeeModel" representedClassName="BaseEmployeeModel" isAbstract="YES" parentEntity="BaseModel" syncable="YES" codeGenerationType="class">
+        <attribute name="lunchTime" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="workplaceNumber" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="BaseModel" representedClassName="BaseModel" isAbstract="YES" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="salary" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Employee" representedClassName="Employee" parentEntity="BaseEmployeeModel" syncable="YES" codeGenerationType="class"/>
+    <entity name="Managment" representedClassName="Managment" parentEntity="BaseModel" syncable="YES" codeGenerationType="class">
+        <attribute name="receptionHours" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="BaseModel" positionX="-11723.08984375" positionY="-282.2109375" width="132.84765625" height="73"/>
+        <element name="Managment" positionX="-11709" positionY="-261" width="128" height="58"/>
+        <element name="Employee" positionX="-11700" positionY="-243" width="128" height="43"/>
+        <element name="Accountant" positionX="-11682" positionY="-216" width="128" height="58"/>
+        <element name="BaseEmployeeModel" positionX="-11664" positionY="-189" width="128" height="73"/>
+    </elements>
 </model>
